@@ -13,22 +13,4 @@
     <PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="jni4net.n-0.8.8.0">
-      <HintPath>jniForNet\jni4net.n-0.8.8.0.dll</HintPath>
-    </Reference>
-    <Reference Include="jni4net.n.w32.v20-0.8.8.0">
-      <HintPath>jniForNet\jni4net.n.w32.v20-0.8.8.0.dll</HintPath>
-    </Reference>
-    <Reference Include="jni4net.n.w32.v40-0.8.8.0">
-      <HintPath>jniForNet\jni4net.n.w32.v40-0.8.8.0.dll</HintPath>
-    </Reference>
-    <Reference Include="jni4net.n.w64.v20-0.8.8.0">
-      <HintPath>jniForNet\jni4net.n.w64.v20-0.8.8.0.dll</HintPath>
-    </Reference>
-    <Reference Include="jni4net.n.w64.v40-0.8.8.0">
-      <HintPath>jniForNet\jni4net.n.w64.v40-0.8.8.0.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

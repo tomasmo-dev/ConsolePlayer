@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace NotePlayer
 {
@@ -33,6 +34,7 @@ namespace NotePlayer
             IntPtr hwnd = ConsolePlayer.Program.ChildHandle;
 
             SendMessage(hwnd, WM_SETTEXT, 0, fr);
+
         }
 
         public static IntPtr GetChildHandle()

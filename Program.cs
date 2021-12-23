@@ -10,7 +10,6 @@ using Emgu.CV;
 using Emgu.CV.Structure;
 using System.IO;
 using System.Threading.Tasks;
-using net.sf.jni4net;
 using System.Diagnostics;
 using System.Collections.Generic;
 
@@ -44,7 +43,7 @@ namespace ConsolePlayer
 
         static int frameCount = 0;
 
-        static byte[] buffer;
+        //static byte[] buffer;
 
         static Stream stdo = Console.OpenStandardOutput(); // old output variable
 
@@ -129,7 +128,11 @@ namespace ConsolePlayer
             if (ptr == Frames.Count - 1) { timer.Stop(); Environment.Exit(0); }
 
             //buffer = Encoding.UTF8.GetBytes(Frames[ptr]);
-            NotePlayer.Program.DrawFrame(Frames[ptr]);
+            //await NotePlayer.Program.DrawFrame(Frames[ptr]).ConfigureAwait(false);
+            Thread t = new Thread(() => NotePlayer.Program.DrawFrame(Frames[ptr]));
+
+            Task.Factory.StartNew(() => t.Start());
+            //Task.Factory.StartNew(() => NotePlayer.Program.DrawFrame(Frames[ptr]));
             ptr++;
 
             //WriteFile(StdHandle, ref buffer[0], buffer.Length, out int _, IntPtr.Zero);
@@ -153,6 +156,14 @@ namespace ConsolePlayer
             Console.SetCursorPosition(0, 0);
             string selectedFrame = Frames[i];
             Console.Write(selectedFrame);
+        }
+
+        private static void MakeFile(string name, string content)
+        {
+            string path = @"C:\Users\tomas\OneDrive\Plocha\frames\";
+
+            File.WriteAllText(path + name + ".txt", content);
+
         }
 
         private static void LoadFrames()
@@ -181,6 +192,7 @@ namespace ConsolePlayer
                 }
 
                 Frames.Add(sb.ToString());
+                //MakeFile(index.ToString(), sb.ToString());
 
                 frame = capture.QueryFrame();
 
@@ -268,7 +280,7 @@ namespace ConsolePlayer
             }
 
             byte[] buffer = Encoding.UTF8.GetBytes(sb.ToString());
-            int written = 0;
+            //int written = 0;
 
             //WriteFile(StdHandle, ref buffer[0], buffer.Length, out written, IntPtr.Zero);
 
