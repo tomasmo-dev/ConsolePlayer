@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+	  <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Emgu.CV" Version="4.5.4.4788" />
+    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.5.4.4788" />
+    <PackageReference Include="System.Windows.Extensions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="jni4net.n-0.8.8.0">
+      <HintPath>jniForNet\jni4net.n-0.8.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="jni4net.n.w32.v20-0.8.8.0">
+      <HintPath>jniForNet\jni4net.n.w32.v20-0.8.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="jni4net.n.w32.v40-0.8.8.0">
+      <HintPath>jniForNet\jni4net.n.w32.v40-0.8.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="jni4net.n.w64.v20-0.8.8.0">
+      <HintPath>jniForNet\jni4net.n.w64.v20-0.8.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="jni4net.n.w64.v40-0.8.8.0">
+      <HintPath>jniForNet\jni4net.n.w64.v40-0.8.8.0.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
