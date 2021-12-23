@@ -1,6 +1,6 @@
 # ConsolePlayer
 
-~ Only works on Windows!
+# Only works on Windows!
 
 Plays bad apple in console and notepad window
 
