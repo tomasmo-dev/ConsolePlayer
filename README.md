@@ -12,7 +12,7 @@ Plays bad apple in console or notepad window
 - ba.wav is only audio for win sound player
 
 # Changing output mode
-to change from notepad output to console find :
+to change from notepad output to console find (located in Program.cs) :
 
     private static void GetFrame(object sender, EventArgs e)
         {
